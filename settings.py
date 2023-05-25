@@ -9,6 +9,10 @@ BG_COLOR = (255, 153, 51) #background color
 SPRITE_DIR_PATH = 'assets/sprites'
 FONT_PATH = 'assets/fonts/DragonHunter-9Ynxj.otf'
 
+SOUNDS_END_PATH = 'assets/sounds/Gameover.wav'
+SOUNDS_DROP_PATH = 'assets/sounds/Drop.wav'
+SOUNDS_LINECLEAR_PATH = 'assets/sounds/Lineclear.wav'
+
 ANIM_TIME_INTERVAL = 150 #in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
 

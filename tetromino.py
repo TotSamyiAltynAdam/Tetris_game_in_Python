@@ -66,6 +66,7 @@ class Tetromino:
         self.blocks = [Block(self,pos) for pos in TETRMONIOES[self.shape]] 
         self.landing = False
         self.current = current
+    
         
     def rotate(self):
         pivot_pos = self.blocks[0].pos

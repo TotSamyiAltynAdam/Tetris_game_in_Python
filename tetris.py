@@ -40,6 +40,7 @@ class Tetris:
         self.tetromino = Tetromino(self)
         self.next_tetromino = Tetromino(self, current=False)
         self.speed_up = False
+        self.check_game_over = False
         
         self.score = 0
         self.full_lines = 0
@@ -64,7 +65,9 @@ class Tetris:
                 for x in range(FIELD_W):
                     self.field_array[row][x].alive = False
                     self.field_array[row][x] = 0
-                    
+                pg.mixer.init()                        # here is i am removing the line if this line fulled
+                pg.mixer.music.load(SOUNDS_LINECLEAR_PATH)
+                pg.mixer.music.play(loops=0)    
                 self.full_lines += 1
                 
     def put_tetromino_blocks_in_array(self):
@@ -77,19 +80,27 @@ class Tetris:
 
     def is_game_over(self):
         if self.tetromino.blocks[0].pos.y == INIT_POS_OFFSET[1]:
-            pg.time.wait(300)
-            return True        
+            pg.mixer.init()
+            pg.mixer.music.load(SOUNDS_END_PATH)        #here is I am adding a music file for giving a signal that gave over
+            pg.mixer.music.play(loops=0)
+            pg.time.wait(1000)
+            return True
     
     def check_tetromino_landing(self):
         if self.tetromino.landing:
             if self.is_game_over():
-                self.__init__(self.app)
+                self.check_game_over = True             #here is I am giving a true to boolean to finishing the game
+                # self.__init__(self.app)
             else:
                 self.speed_up = False
                 self.put_tetromino_blocks_in_array()
                 self.next_tetromino.current = True
                 self.tetromino = self.next_tetromino
-                self.next_tetromino = Tetromino(self, current=False)  
+                self.next_tetromino = Tetromino(self, current=False)  # here I am creating a new shape
+                pg.mixer.init()
+                pg.mixer.music.load(SOUNDS_DROP_PATH)
+                pg.mixer.music.play(loops=0)
+
         
     def control(self, pressed_key):
         if pressed_key == pg.K_LEFT:
