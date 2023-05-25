@@ -1,4 +1,5 @@
 from settings import *
+from tetris import Tetris
 import sys
 
 
@@ -8,12 +9,15 @@ class App:
         pg.display.set_caption('Tetris')
         self.screen = pg.display.set_mode(FIELD_RES)
         self.clock = pg.time.Clock()
+        self.tetris = Tetris(self)
 
     def update(self):
+        self.tetris.update()
         self.clock.tick(FPS)
 
     def draw(self):
         self.screen.fill(color=FIELD_COLOR)
+        self.tetris.draw()
         pg.display.flip()
 
     def check_events(self):
