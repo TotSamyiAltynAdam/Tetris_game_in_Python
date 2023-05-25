@@ -14,7 +14,8 @@ class Block(pg.sprite.Sprite):
 class Tetromino:
     def __init__ (self, tetris):
         self.tetris = tetris
-        Block(self, (4,7))
-    
+        self.shape = 'T'
+        self.blocks = [Block(self,pos) for pos in TETRMONIOES[self.shape]]    
+        
     def update(self):
         pass
