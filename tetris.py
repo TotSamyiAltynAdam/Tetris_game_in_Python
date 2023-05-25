@@ -90,7 +90,7 @@ class Tetris:
         if self.tetromino.landing:
             if self.is_game_over():
                 self.check_game_over = True             #here is I am giving a true to boolean to finishing the game
-                # self.__init__(self.app)
+                # self.__init__(self.app)               #now I do not need to restart I just to create menu panel
             else:
                 self.speed_up = False
                 self.put_tetromino_blocks_in_array()
