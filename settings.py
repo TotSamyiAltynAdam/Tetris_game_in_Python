@@ -4,7 +4,7 @@ vec = pg.math.Vector2
 
 FPS = 60
 FIELD_COLOR = (48, 39, 32) # background color for playing area
-BG_COLOR = (24, 89, 117) #background color
+BG_COLOR = (255, 153, 51) #background color
 
 SPRITE_DIR_PATH = 'assets/sprites'
 FONT_PATH = 'assets/fonts/DragonHunter-9Ynxj.otf'
@@ -12,7 +12,7 @@ FONT_PATH = 'assets/fonts/DragonHunter-9Ynxj.otf'
 ANIM_TIME_INTERVAL = 150 #in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
 
-TILE_SIZE = 40
+TILE_SIZE = 40   # flexible
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 18 #number of ceils in the playing area
 FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE # field area
 
