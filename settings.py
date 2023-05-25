@@ -7,6 +7,7 @@ FIELD_COLOR = (48, 39, 32) # background color for playing area
 BG_COLOR = (24, 89, 117) #background color
 
 SPRITE_DIR_PATH = 'assets/sprites'
+FONT_PATH = 'assets/fonts/DragonHunter-9Ynxj.otf'
 
 ANIM_TIME_INTERVAL = 150 #in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15

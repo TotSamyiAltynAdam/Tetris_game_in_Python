@@ -1,6 +1,20 @@
 from settings import*
 import math
 from tetromino import Tetromino
+import pygame.freetype as ft
+
+class Text:
+    def __init__(self, app):
+        self.app = app
+        self.font = ft.Font(FONT_PATH)
+        
+    def draw(self):
+        y_offset = WIN_H * 0.02
+        self.font.render_to(self.app.screen, (WIN_W * 0.595, y_offset), 
+                            text='N_Factorial"s Tetris', 
+                            fgcolor='white',
+                            size=TILE_SIZE * 0.6,
+                            bgcolor='red')
 
 class Tetris:
     def __init__ (self,app):
