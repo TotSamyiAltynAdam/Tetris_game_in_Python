@@ -1,4 +1,5 @@
 from settings import*
+import random
 
 class Block(pg.sprite.Sprite):
     def __init__ (self, tetromino, pos):
@@ -15,7 +16,7 @@ class Block(pg.sprite.Sprite):
 class Tetromino:
     def __init__ (self, tetris):
         self.tetris = tetris
-        self.shape = 'T'
+        self.shape = random.choice(list(TETRMONIOES.keys()))
         self.blocks = [Block(self,pos) for pos in TETRMONIOES[self.shape]]    
         
     def update(self):
