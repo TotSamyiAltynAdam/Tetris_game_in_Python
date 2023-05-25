@@ -3,16 +3,20 @@ import pygame as pg
 vec = pg.math.Vector2
 
 FPS = 60
-FIELD_COLOR = (48, 39, 32)
+FIELD_COLOR = (48, 39, 32) # background color for playing area
+BG_COLOR = (24, 89, 117) #background color
 
 SPRITE_DIR_PATH = 'assets/sprites'
 
 ANIM_TIME_INTERVAL = 150 #in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
 
-TILE_SIZE = 50
-FIELD_SIZE = FIELD_W, FIELD_H = 10, 14
-FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE
+TILE_SIZE = 40
+FIELD_SIZE = FIELD_W, FIELD_H = 10, 18 #number of ceils in the playing area
+FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE # field area
+
+FIELD_SCALE_W, FIELD_SCALE_H = 1.7, 1.0
+WIN_RES = WIN_W, WIN_H = FIELD_RES[0] * FIELD_SCALE_W, FIELD_RES[1] * FIELD_SCALE_H
 
 INIT_POS_OFFSET = vec(FIELD_W // 2 - 1, 0)
 MOVE_DIRECTIONS = {'left': vec(-1,0), 'right': vec(1,0), 'down': vec(0,1)}
