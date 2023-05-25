@@ -65,9 +65,11 @@ class Tetris:
                 for x in range(FIELD_W):
                     self.field_array[row][x].alive = False
                     self.field_array[row][x] = 0
+                
                 pg.mixer.init()                        # here is i am removing the line if this line fulled
                 pg.mixer.music.load(SOUNDS_LINECLEAR_PATH)
                 pg.mixer.music.play(loops=0)    
+                                 
                 self.full_lines += 1
                 
     def put_tetromino_blocks_in_array(self):
@@ -84,6 +86,15 @@ class Tetris:
             pg.mixer.music.load(SOUNDS_END_PATH)        #here is I am adding a music file for giving a signal that gave over
             pg.mixer.music.play(loops=0)
             pg.time.wait(1000)
+            #--------------------- I am going to store date to the txt file
+            file_path = MAXIMUM_SCORE_PATH
+            my_score = self.score 
+            with open(file_path, "r") as file:
+                stored_number = int(file.readline().strip())
+            if my_score > stored_number: 
+                with open(file_path, "w") as file:
+                    file.write(str(my_score))                   
+            #---------------------------   
             return True
     
     def check_tetromino_landing(self):

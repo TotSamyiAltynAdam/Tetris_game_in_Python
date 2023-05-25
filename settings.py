@@ -13,6 +13,8 @@ SOUNDS_END_PATH = 'assets/sounds/Gameover.wav'
 SOUNDS_DROP_PATH = 'assets/sounds/Drop.wav'
 SOUNDS_LINECLEAR_PATH = 'assets/sounds/Lineclear.wav'
 
+MAXIMUM_SCORE_PATH = 'maximumScore.txt'
+
 ANIM_TIME_INTERVAL = 150 #in milliseconds
 FAST_ANIM_TIME_INTERVAL = 15
 
